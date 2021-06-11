@@ -3,6 +3,7 @@
 #include "../cmds/echo.hh"
 #include "../cmds/help.hh"
 #include "../cmds/ls.hh"
+#include "../cmds/cls.hh"
 
 /** */
 /** */
@@ -11,6 +12,7 @@ using namespace std;
 using namespace echo;
 using namespace help;
 using namespace ls;
+using namespace cls;
 
 #include <sstream>
 /**
@@ -56,6 +58,11 @@ void cmd_rf(string ln)
             _ls.run();
             std::cout << "\n";
         }
+    }
+    else if (!ln.find("cls"))
+    {
+        cmd_cls _cls;
+        _cls.run();
     }
     else
     {
