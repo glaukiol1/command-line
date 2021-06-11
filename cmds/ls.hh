@@ -17,7 +17,7 @@ namespace ls {
                 directory_contents dircontents(_path);
                 for (string l : dircontents.dir_contents) {
                     if (l.length()>=1) {
-                        if (i==8 || i==-1 || i==0 && first_time) {
+                        if (i==8 || i==-1 || ( i==0 && first_time )) {
                             if(first_time) {
                                 cout << "\t";
                             } else {
