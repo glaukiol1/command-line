@@ -24,7 +24,7 @@ int main()
 		exit(1);
 	} else {
 		printf("\tWorking in: %s\n", cwd);
-	}
+	};
 	print("\0");
 	
 	while (1 == 1)
