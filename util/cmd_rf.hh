@@ -12,6 +12,23 @@ using namespace echo;
 using namespace help;
 using namespace ls;
 
+#include <sstream>
+/**
+ * copy a secondary _splitter function for use in cmd_rf.hh. 
+ */
+class _splitter {
+    public:
+        std::string _arr[285];
+        _splitter(std::string line){
+            int i = 0;
+            std::stringstream ssin(line);
+            while (ssin.good()){
+                ssin >> _arr[i];
+                ++i;
+            };
+        };
+};
+
 void cmd_rf(string ln)
 {
     if (!ln.find("echo"))
@@ -32,7 +49,6 @@ void cmd_rf(string ln)
         if (getcwd(cwd, sizeof(cwd)) == NULL)
         {
             perror("\t getcwd() error");
-            exit(1);
         }
         else
         {
@@ -40,5 +56,10 @@ void cmd_rf(string ln)
             _ls.run();
             std::cout << "\n";
         }
+    }
+    else
+    {
+        _splitter split(ln);
+        cout << "\t \"" << split._arr[0]  << "\" " << "is not recognized as a command, executable, script file, or function. Check the spelling, or if a path was included. \n";
     };
 }
