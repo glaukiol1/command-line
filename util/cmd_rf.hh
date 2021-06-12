@@ -4,6 +4,7 @@
 #include "../cmds/help.hh"
 #include "../cmds/ls.hh"
 #include "../cmds/clear.hh"
+#include "../cmds/pause.hh"
 
 /** */
 /** */
@@ -13,6 +14,7 @@ using namespace echo;
 using namespace help;
 using namespace ls;
 using namespace clear;
+using namespace pause;
 
 #include <sstream>
 /**
@@ -63,6 +65,10 @@ void cmd_rf(string ln)
     {
         cmd_clear _clear;
         _clear.run();
+    }
+    else if (!ln.find("pause")) {
+        cmd_pause _pause;
+        _pause.run();
     }
     else
     {
