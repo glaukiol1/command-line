@@ -22,7 +22,7 @@ $ g++ -Wall -Wextra -g cmd.cpp -O3 -march=native
 Now you should have one of the two files, `a.exe` or `a.out`. Don't worry if the output file is named different than `a.exe` or `a.out`, depending on your compiler & version, it might be different. Now you can run these files and you have the shell! As I said, you can find articles on compiling it further to mirocode, so you can use it on your own OS.
 
 # Commands
-Currently, these are the commandss implemented;
+Currently, these are the commands implemented;
 ```sh
 echo
 clear
