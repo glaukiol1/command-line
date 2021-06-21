@@ -28,5 +28,6 @@ echo
 clear
 .help
 ls
+pause
 # run the .help command for details.
 ```
